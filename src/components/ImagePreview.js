@@ -7,7 +7,7 @@ export default function ImagePreview({ src, alt, author, id }) {
     <div className="imageContainer">
       <IconButton
         onClick={() => {
-          localStorage.setItem("favorites", id);
+          localStorage.setItem("favorites", JSON.stringify([id]));
         }}
       >
         💖
