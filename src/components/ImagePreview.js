@@ -2,12 +2,12 @@ import React from "react";
 import IconButton from "./IconButton";
 import "./ImagePreview.css";
 
-export default function ImagePreview({ src, alt, author }) {
+export default function ImagePreview({ src, alt, author, id }) {
   return (
     <div className="imageContainer">
       <IconButton
         onClick={() => {
-          alert("Clicked");
+          localStorage.setItem("favorites", id);
         }}
       >
         💖
