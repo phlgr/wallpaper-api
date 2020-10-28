@@ -15,6 +15,10 @@ export default function ImagePreview({ src, alt, author, id }) {
             console.error(error);
             favorites = [];
           }
+          if (favorites.includes(id)) {
+            // Already added to favorites
+            return;
+          }
           const newFavorites = [...favorites, id];
           localStorage.setItem("favorites", JSON.stringify(newFavorites));
         }}
