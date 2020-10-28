@@ -5,7 +5,13 @@ import "./ImagePreview.css";
 export default function ImagePreview({ src, alt, author }) {
   return (
     <div className="imageContainer">
-      <IconButton>💖</IconButton>
+      <IconButton
+        onClick={() => {
+          alert("Clicked");
+        }}
+      >
+        💖
+      </IconButton>
       <img className="imageThumb" src={src} alt={alt} />
       <p className="imageAuthor">Author: {author}</p>
     </div>
