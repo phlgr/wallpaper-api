@@ -1,0 +1,15 @@
+.image-list {
+  display: flex;
+  max-height: 200px;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.image-list > img {
+  /* height: 100%; */
+  object-fit: contain;
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 0 1rem;
+}
