@@ -1,4 +1,4 @@
-const { without } = require("./arrays");
+import { without } from "./arrays";
 
 it("creates new numbers array without a number", () => {
   const numbers = [1, 3, 7, 8, 11, 13];
