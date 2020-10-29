@@ -1,4 +1,5 @@
 import React from "react";
+import { getFavorites } from "../api/storage";
 import IconButton from "./IconButton";
 import "./ImagePreview.css";
 
@@ -7,14 +8,7 @@ export default function ImagePreview({ src, alt, author, id }) {
     <div className="imageContainer">
       <IconButton
         onClick={() => {
-          let favorites = null;
-          try {
-            favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-          } catch (error) {
-            // Parsing JSON might fail
-            console.error(error);
-            favorites = [];
-          }
+          const favorites = getFavorites();
           if (favorites.includes(id)) {
             // Already added to favorites
             return;

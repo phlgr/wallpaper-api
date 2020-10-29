@@ -3,6 +3,7 @@ import { useState } from "react";
 import ImagePreview from "./components/ImagePreview";
 import { getRandomImage } from "./api/getRandomImage";
 import FavoriteImageList from "./components/FavoriteImageList";
+import { getFavorites } from "./api/storage";
 
 function App() {
   const [randomImage, setRandomImage] = useState(null);
@@ -12,6 +13,7 @@ function App() {
     setRandomImage(randomImageResponse);
   }
 
+  const favorites = getFavorites();
   return (
     <main>
       <button onClick={() => handleClick()}>Get Random Image</button>
@@ -23,9 +25,7 @@ function App() {
           author={randomImage.user.name}
         />
       )}
-      <FavoriteImageList
-        photoIds={["UjD08DRW24E", "k38v31SkZdo", "AW_P_NU9MI8"]}
-      />
+      <FavoriteImageList photoIds={favorites} />
     </main>
   );
 }
