@@ -34,5 +34,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test -- --watchAll=false",
+      "pre-push": "npm test"
+    }
+  },
+  "devDependencies": {
+    "husky": "^4.3.0"
   }
 }
